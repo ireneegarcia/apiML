@@ -15,8 +15,8 @@ router.get('/api/items', async function(req, res, next) {
 
     let objArr = new Object({
         author: {
-            name: "irene",
-            lastname: "garcia"
+            name: "Irene",
+            lastname: "Garcia"
         },
         categories: [],
         items: []
@@ -74,8 +74,8 @@ router.get('/api/item/:id', async function(req, res, next) {
 
     let obj = new Object({
         author: {
-            name: "irene",
-            lastname: "garcia"
+            name: "Irene",
+            lastname: "Garcia"
         },
         items: new Object({
             id: resp.data.id,
@@ -101,6 +101,17 @@ router.get('/api/item/:id', async function(req, res, next) {
             obj.categories.push(category);
         }
     }
+
+    res.json(obj);
+});
+
+router.get('/api/author', async function(req, res, next) {
+    let obj = new Object({
+        author: {
+            name: "Irene",
+            lastname: "Garcia"
+        }
+    });
 
     res.json(obj);
 });
